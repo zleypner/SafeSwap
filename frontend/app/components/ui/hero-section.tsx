@@ -17,7 +17,7 @@ export function HeroSection() {
 						<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
 						<span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
 					</span>
-					Live on Stellar Network
+					Built on Stellar Network
 				</div>
 
 				<h1 className="text-4xl sm:text-6xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70">

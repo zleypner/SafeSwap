@@ -8,3 +8,6 @@
 
 ## 📜 Additional Notes
 - Some additional notes
+
+## ✅ Changes made
+- Write the changes made

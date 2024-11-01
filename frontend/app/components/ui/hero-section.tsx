@@ -20,7 +20,7 @@ export function HeroSection() {
 					Live on Stellar Network
 				</div>
 
-				<h1 className="text-4xl sm:text-6xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70">
+				<h1 className="text-4xl sm:text-6xl font-bold tracking-tight mb-8 bg-clip-text from-primary to-primary/70">
 					The Future of
 					<span className="block mt-2">Secure Trading</span>
 				</h1>

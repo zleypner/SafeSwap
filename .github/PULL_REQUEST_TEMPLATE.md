@@ -6,8 +6,8 @@
 ## 📖 Description
 - Description of the issue
 
-## 📜 Additional Notes
-- Some additional notes
-
 ## ✅ Changes made
 - Write the changes made
+
+## 📜 Additional Notes
+- Some additional notes

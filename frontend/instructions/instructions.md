@@ -54,8 +54,11 @@ TBD
 ├── README.md
 ├── app
 │   ├── components
+│   │   └── ui
 │   ├── favicon.ico
 │   ├── fonts
+│   │   ├── GeistMonoVF.woff
+│   │   └── GeistVF.woff
 │   ├── globals.css
 │   ├── layout.tsx
 │   └── page.tsx
@@ -64,7 +67,6 @@ TBD
 ├── components.json
 ├── instructions
 │   └── instructions.md
-├── lefthook.yml
 ├── lib
 │   └── utils.ts
 ├── next-env.d.ts

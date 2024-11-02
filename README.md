@@ -62,6 +62,35 @@ Welcome to the **Web Marketplace with Escrow Contracts**, a decentralized platfo
    npm start
    ```
 
+### Frontend
+
+1. Navigate to the frontend directory:
+   ```bash
+   cd frontend
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Run development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+Available Commands:
+- `npm run web:dev` - Start development server
+- `npm run web:build` - Create production build
+- `npm run web:start` - Start production server
+- `npm run web:lint` - Run Biome linter
+
+## 📚 Documentation
+
+For detailed frontend documentation, see the [README.md](frontend/README.md) file.
+
 ### How It Works
 
 1. **Listing a Product**: Sellers can create listings for products. Each listing includes information such as price, description, and images.

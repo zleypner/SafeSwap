@@ -73,7 +73,7 @@ export const SidebarTrigger = React.forwardRef<HTMLButtonElement, React.ButtonHT
         className={cn("p-2", className)}
         {...props}
       >
-        <Menu size={30} className="text-purple-900"/>
+        <Menu size={30} className="text-black"/>
         <span className="sr-only">Toggle Sidebar</span>
       </button>
     );

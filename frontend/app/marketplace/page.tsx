@@ -86,14 +86,14 @@ function SidebarComponent({ priceRange, setPriceRange, selectedCategories, handl
       <SidebarContent className="p-6">
         <div className="space-y-8">
           <div>
-            <h3 className="mb-3 text-lg font-medium">Price range</h3>
+            <h3 className="mb-2 text-lg font-medium">Price range</h3>
             <Slider
               min={0}
               max={1500}
               step={10}
               value={priceRange}
               onValueChange={setPriceRange}
-              className="mb-4"
+              className="mb-3"
             />
             <div className="flex justify-between text-lg">
               <span>${priceRange[0]}</span>
@@ -101,7 +101,7 @@ function SidebarComponent({ priceRange, setPriceRange, selectedCategories, handl
             </div>
           </div>
           <div>
-            <h3 className="mb-3 text-lg font-medium">Categories</h3>
+            <h3 className="mb-2 text-lg font-medium">Categories</h3>
             <div className="space-y-3">
               {["Electronics", "Furniture", "Appliances", "Sports"].map((category) => (
                 <div key={category} className="flex items-center">
@@ -125,21 +125,21 @@ function HeaderComponent({ searchTerm, setSearchTerm }: HeaderComponentProps) {
   return (
     <header className="flex items-center justify-between p-6 border-b">
       <SidebarTrigger>
-        <Button variant="outline" size="icon" className="text-purple-900">
-          <HamIcon size={50} />
+        <Button variant="outline" size="icon">
+          <HamIcon className="h-6 w-6" />
           <span className="sr-only">Toggle Sidebar</span>
         </Button>
       </SidebarTrigger>
-      <div className="flex items-center space-x-3">
+      <div className="flex items-center text-2xl space-x-3">
         <Input
           type="search"
           placeholder="Search products..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-80 text-lg"
+          className="w-[16rem] h-[3rem]"
         />
-        <Button size="icon" variant="ghost" className="text-purple-900">
-          <Search className="h-6 w-6" />
+        <Button size="icon" variant="ghost">
+          <Search className="h-5 w-5" />
           <span className="sr-only">Search</span>
         </Button>
       </div>
@@ -150,19 +150,19 @@ function HeaderComponent({ searchTerm, setSearchTerm }: HeaderComponentProps) {
 function ProductList({ products }: ProductListProps) {
   return (
     <main className="p-8">
-      <h1 className="text-3xl font-bold mb-8 text-purple-900">Products</h1>
+      <h1 className="text-3xl font-bold mb-8">Products</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {products?.map((product) => (
-          <Card key={product.id}>
+          <Card key={product.id} className="p-6">
             <CardHeader>
-              <CardTitle className="text-purple-900 text-2xl">{product.name}</CardTitle>
+              <CardTitle className="text-xl font-semibold">{product.name}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-500 text-lg">{product.category}</p>
+              <p className="text-lg text-gray-500">{product.category}</p>
             </CardContent>
-            <CardFooter className="flex justify-between">
-              <span className="text-xl font-semibold text-purple-900">${product.price}</span>
-              <Button variant="outline" className="text-purple-900 text-[1.1rem]">Add to cart</Button>
+            <CardFooter className="flex justify-between items-center">
+              <span className="text-2xl font-bold">${product.price}</span>
+              <Button className="text-[16px] py-2 px-4">Add to Cart</Button>
             </CardFooter>
           </Card>
         ))}

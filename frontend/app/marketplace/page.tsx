@@ -84,10 +84,6 @@ function SidebarComponent({
   selectedCategories,
   handleCategoryChange,
 }: SidebarComponentProps) {
-  const pathname = usePathname();
-  const router = useRouter();
-  // * Shows home button only on marketplace path but can be extended to other pages if needed
-  const showHomeButton = pathname?.includes("/marketplace");
   return (
     <Sidebar>
       <SidebarHeader className="p-6 border-b">
@@ -95,18 +91,6 @@ function SidebarComponent({
       </SidebarHeader>
       <SidebarContent className="p-6">
         <div className="space-y-8">
-          {showHomeButton && (
-            <div className="mb-6">
-              <Button
-                variant="outline"
-                className="w-full flex items-center justify-center gap-2"
-                onClick={() => router.push("/")}
-              >
-                <Home className="h-4 w-4" />
-                Home
-              </Button>
-            </div>
-          )}
           <div>
             <h3 className="mb-2 text-lg font-medium">Price range</h3>
             <Slider
@@ -147,15 +131,33 @@ function SidebarComponent({
   );
 }
 
+
 function HeaderComponent({ searchTerm, setSearchTerm }: HeaderComponentProps) {
+  const pathname = usePathname();
+  const router = useRouter();
+  const showHomeButton = pathname?.includes("/marketplace");
+
   return (
     <header className="flex items-center justify-between p-6 border-b">
-      <SidebarTrigger>
-        <Button variant="outline" size="icon">
-          <HamIcon className="h-6 w-6" />
-          <span className="sr-only">Toggle Sidebar</span>
-        </Button>
-      </SidebarTrigger>
+      <div className="flex items-center gap-4">
+        <SidebarTrigger>
+          <Button variant="outline" size="icon">
+            <HamIcon className="h-6 w-6" />
+            <span className="sr-only">Toggle Sidebar</span>
+          </Button>
+        </SidebarTrigger>
+        {showHomeButton && (
+          <Button
+            variant="outline"
+            size="sm"
+            className="flex items-center gap-2"
+            onClick={() => router.push("/")}
+          >
+            <Home className="h-6 w-6" />
+            Home
+          </Button>
+        )}
+      </div>
       <div className="flex items-center text-2xl space-x-3">
         <Input
           type="search"
@@ -172,6 +174,7 @@ function HeaderComponent({ searchTerm, setSearchTerm }: HeaderComponentProps) {
     </header>
   );
 }
+
 
 function ProductList({ products }: ProductListProps) {
   return (

@@ -1,12 +1,13 @@
 'use client';
-import { useState, Dispatch, SetStateAction } from 'react';
+import { useState, type Dispatch, type SetStateAction } from 'react';
 import { Slider } from "@/app/components/ui/slider";
 import { Checkbox } from "@/app/components/ui/checkbox";
 import { Button } from "@/app/components/ui/button";
 import { Input } from "@/app/components/ui/input";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/app/components/ui/card";
 import { Sidebar, SidebarContent, SidebarHeader, SidebarProvider, SidebarTrigger } from "@/app/components/ui/sidebar";
-import { Search, Menu as HamIcon } from "lucide-react";
+import { Search, Menu as HamIcon, Home } from "lucide-react";
+import { usePathname, useRouter } from 'next/navigation';
 
 interface Product {
   id: number;
@@ -77,7 +78,15 @@ export default function Marketplace() {
   );
 }
 
-function SidebarComponent({ priceRange, setPriceRange, selectedCategories, handleCategoryChange }: SidebarComponentProps) {
+function SidebarComponent({
+  priceRange,
+  setPriceRange,
+  selectedCategories,
+  handleCategoryChange,
+}: SidebarComponentProps) {
+  const pathname = usePathname();
+  const router = useRouter();
+  const showHomeButton = pathname?.includes("/marketplace");
   return (
     <Sidebar>
       <SidebarHeader className="p-6 border-b">
@@ -85,6 +94,18 @@ function SidebarComponent({ priceRange, setPriceRange, selectedCategories, handl
       </SidebarHeader>
       <SidebarContent className="p-6">
         <div className="space-y-8">
+          {showHomeButton && (
+            <div className="mb-6">
+              <Button
+                variant="outline"
+                className="w-full flex items-center justify-center gap-2"
+                onClick={() => router.push("/")}
+              >
+                <Home className="h-4 w-4" />
+                Home
+              </Button>
+            </div>
+          )}
           <div>
             <h3 className="mb-2 text-lg font-medium">Price range</h3>
             <Slider
@@ -92,7 +113,7 @@ function SidebarComponent({ priceRange, setPriceRange, selectedCategories, handl
               max={1500}
               step={10}
               value={priceRange}
-              onValueChange={setPriceRange}
+              onVolumeChange={setPriceRange}
               className="mb-3"
             />
             <div className="flex justify-between text-lg">
@@ -103,16 +124,20 @@ function SidebarComponent({ priceRange, setPriceRange, selectedCategories, handl
           <div>
             <h3 className="mb-2 text-lg font-medium">Categories</h3>
             <div className="space-y-3">
-              {["Electronics", "Furniture", "Appliances", "Sports"].map((category) => (
-                <div key={category} className="flex items-center">
-                  <Checkbox
-                    id={category}
-                    checked={selectedCategories.includes(category)}
-                    onCheckedChange={() => handleCategoryChange(category)}
-                  />
-                  <label htmlFor={category} className="ml-3 text-lg">{category}</label>
-                </div>
-              ))}
+              {["Electronics", "Furniture", "Appliances", "Sports"].map(
+                (category) => (
+                  <div key={category} className="flex items-center">
+                    <Checkbox
+                      id={category}
+                      checked={selectedCategories.includes(category)}
+                      onCheckedChange={() => handleCategoryChange(category)}
+                    />
+                    <label htmlFor={category} className="ml-3 text-lg">
+                      {category}
+                    </label>
+                  </div>
+                )
+              )}
             </div>
           </div>
         </div>

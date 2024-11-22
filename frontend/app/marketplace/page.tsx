@@ -86,6 +86,7 @@ function SidebarComponent({
 }: SidebarComponentProps) {
   const pathname = usePathname();
   const router = useRouter();
+  // * Shows home button only on marketplace path but can be extended to other pages if needed
   const showHomeButton = pathname?.includes("/marketplace");
   return (
     <Sidebar>
@@ -113,7 +114,7 @@ function SidebarComponent({
               max={1500}
               step={10}
               value={priceRange}
-              onVolumeChange={setPriceRange}
+              onValueChange={setPriceRange}
               className="mb-3"
             />
             <div className="flex justify-between text-lg">

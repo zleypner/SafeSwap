@@ -53,9 +53,9 @@ const products: Product[] = [
 		price: 1299,
 		category: "Electronics",
 		images: [
-			{ src: "/macbook-pro-14.webp", alt: "MacBook Pro 14" },
-			{ src: "/macbook-pro-14.webp", alt: "MacBook Pro 14" },
-			{ src: "/macbook-pro-14.webp", alt: "MacBook Pro 14" },
+			{ src: "/images/macbook-pro-14.webp", alt: "MacBook Pro 14" },
+			{ src: "/images/macbook-pro-14.webp", alt: "MacBook Pro 14" },
+			{ src: "/images/macbook-pro-14.webp", alt: "MacBook Pro 14" },
 		],
 	},
 	{
@@ -64,9 +64,9 @@ const products: Product[] = [
 		price: 699,
 		category: "Electronics",
 		images: [
-			{ src: "/samsung-galaxy-s24-fe.webp", alt: "Samsung Galaxy S24 FE" },
-			{ src: "/samsung-galaxy-s24-fe.webp", alt: "Samsung Galaxy S24 FE" },
-			{ src: "/samsung-galaxy-s24-fe.webp", alt: "Samsung Galaxy S24 FE" },
+			{ src: "/images/samsung-galaxy-s24-fe.webp", alt: "Samsung Galaxy S24 FE" },
+			{ src: "/images/samsung-galaxy-s24-fe.webp", alt: "Samsung Galaxy S24 FE" },
+			{ src: "/images/samsung-galaxy-s24-fe.webp", alt: "Samsung Galaxy S24 FE" },
 		],
 	},
 	{
@@ -75,9 +75,9 @@ const products: Product[] = [
 		price: 299,
 		category: "Furniture",
 		images: [
-			{ src: "/ergonomic-chair.jpg", alt: "Ergonomic Chair" },
-			{ src: "/ergonomic-chair.jpg", alt: "Ergonomic Chair" },
-			{ src: "/ergonomic-chair.jpg", alt: "Ergonomic Chair" },
+			{ src: "/images/ergonomic-chair.jpg", alt: "Ergonomic Chair" },
+			{ src: "/images/ergonomic-chair.jpg", alt: "Ergonomic Chair" },
+			{ src: "/images/ergonomic-chair.jpg", alt: "Ergonomic Chair" },
 		],
 	},
 	{
@@ -86,9 +86,9 @@ const products: Product[] = [
 		price: 89,
 		category: "Appliances",
 		images: [
-			{ src: "/coffee-maker.webp", alt: "Coffee Maker" },
-			{ src: "/coffee-maker.webp", alt: "Coffee Maker" },
-			{ src: "/coffee-maker.webp", alt: "Coffee Maker" },
+			{ src: "/images/coffee-maker.webp", alt: "Coffee Maker" },
+			{ src: "/images/coffee-maker.webp", alt: "Coffee Maker" },
+			{ src: "/images/coffee-maker.webp", alt: "Coffee Maker" },
 		],
 	},
 	{
@@ -97,9 +97,9 @@ const products: Product[] = [
 		price: 129,
 		category: "Sports",
 		images: [
-			{ src: "/running-shoes.jpg", alt: "Running Shoes" },
-			{ src: "/running-shoes.jpg", alt: "Running Shoes" },
-			{ src: "/running-shoes.jpg", alt: "Running Shoes" },
+			{ src: "/images/running-shoes.jpg", alt: "Running Shoes" },
+			{ src: "/images/running-shoes.jpg", alt: "Running Shoes" },
+			{ src: "/images/running-shoes.jpg", alt: "Running Shoes" },
 		],
 	},
 	{
@@ -108,9 +108,9 @@ const products: Product[] = [
 		price: 159,
 		category: "Electronics",
 		images: [
-			{ src: "/wireless-earbuds.jpg", alt: "Wireless Earbuds" },
-			{ src: "/wireless-earbuds.jpg", alt: "Wireless Earbuds" },
-			{ src: "/wireless-earbuds.jpg", alt: "Wireless Earbuds" },
+			{ src: "/images/wireless-earbuds.jpg", alt: "Wireless Earbuds" },
+			{ src: "/images/wireless-earbuds.jpg", alt: "Wireless Earbuds" },
+			{ src: "/images/wireless-earbuds.jpg", alt: "Wireless Earbuds" },
 		],
 	},
 ];

@@ -237,7 +237,7 @@ function HeaderComponent({ searchTerm, setSearchTerm }: HeaderComponentProps) {
 
   return (
     <header className="flex items-center justify-between p-6 border-b">
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 min-w-max">
         <SidebarTrigger>
           <Button variant="outline" size="icon">
             <HamIcon className="h-6 w-6" />
@@ -248,23 +248,27 @@ function HeaderComponent({ searchTerm, setSearchTerm }: HeaderComponentProps) {
           <Button
             variant="outline"
             size="sm"
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 px-2"
             onClick={() => router.push("/")}
           >
-            <Home className="h-6 w-6" />
+            <Home className="h-5 w-5" />
             Home
           </Button>
         )}
       </div>
-      <div className="flex items-center text-2xl space-x-3">
+      <div className="relative w-full pl-2 max-w-[18.75rem] md:w-[18.75rem]">
         <Input
           type="search"
           placeholder="Search products..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-[16rem] h-[3rem]"
+          className="w-full h-8 pr-10"
         />
-        <Button size="icon" variant="ghost">
+        <Button
+          size="icon"
+          variant="ghost"
+          className="absolute right-0 top-0 h-full"
+        >
           <Search className="h-5 w-5" />
           <span className="sr-only">Search</span>
         </Button>

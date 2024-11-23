@@ -1,4 +1,5 @@
 "use client";
+
 import { Button } from "@/app/components/ui/button";
 import {
 	Card,
@@ -22,6 +23,18 @@ import { Dispatch, SetStateAction, useState } from "react";
 
 interface Product {
 	id: number;
+import {
+	Menu as HamIcon,
+	MessageSquareMore,
+	Search,
+	ShoppingCart,
+} from "lucide-react";
+import { Dispatch, SetStateAction, useState } from "react";
+import ImageCarousel from "../components/ui/image-carrousel";
+
+interface Product {
+	id: number;
+	images: { src: string; alt: string }[];
 	name: string;
 	price: number;
 	category: string;
@@ -50,6 +63,81 @@ const products: Product[] = [
 	{ id: 4, name: "Coffee Maker", price: 89, category: "Appliances" },
 	{ id: 5, name: "Running Shoes", price: 129, category: "Sports" },
 	{ id: 6, name: "Wireless Earbuds", price: 159, category: "Electronics" },
+	{
+		id: 1,
+		name: "MacBook Pro 14",
+		price: 1299,
+		category: "Electronics",
+		images: [
+			{ src: "/images/macbook-pro-14.webp", alt: "MacBook Pro 14" },
+			{ src: "/images/macbook-pro-14.webp", alt: "MacBook Pro 14" },
+			{ src: "/images/macbook-pro-14.webp", alt: "MacBook Pro 14" },
+		],
+	},
+	{
+		id: 2,
+		name: "Samsung Galaxy S24 FE",
+		price: 699,
+		category: "Electronics",
+		images: [
+			{
+				src: "/images/samsung-galaxy-s24-fe.webp",
+				alt: "Samsung Galaxy S24 FE",
+			},
+			{
+				src: "/images/samsung-galaxy-s24-fe.webp",
+				alt: "Samsung Galaxy S24 FE",
+			},
+			{
+				src: "/images/samsung-galaxy-s24-fe.webp",
+				alt: "Samsung Galaxy S24 FE",
+			},
+		],
+	},
+	{
+		id: 3,
+		name: "Ergonomic Chair",
+		price: 299,
+		category: "Furniture",
+		images: [
+			{ src: "/images/ergonomic-chair.jpg", alt: "Ergonomic Chair" },
+			{ src: "/images/ergonomic-chair.jpg", alt: "Ergonomic Chair" },
+			{ src: "/images/ergonomic-chair.jpg", alt: "Ergonomic Chair" },
+		],
+	},
+	{
+		id: 4,
+		name: "Coffee Maker",
+		price: 89,
+		category: "Appliances",
+		images: [
+			{ src: "/images/coffee-maker.webp", alt: "Coffee Maker" },
+			{ src: "/images/coffee-maker.webp", alt: "Coffee Maker" },
+			{ src: "/images/coffee-maker.webp", alt: "Coffee Maker" },
+		],
+	},
+	{
+		id: 5,
+		name: "Running Shoes",
+		price: 129,
+		category: "Sports",
+		images: [
+			{ src: "/images/running-shoes.jpg", alt: "Running Shoes" },
+			{ src: "/images/running-shoes.jpg", alt: "Running Shoes" },
+			{ src: "/images/running-shoes.jpg", alt: "Running Shoes" },
+		],
+	},
+	{
+		id: 6,
+		name: "Wireless Earbuds",
+		price: 159,
+		category: "Electronics",
+		images: [
+			{ src: "/images/wireless-earbuds.jpg", alt: "Wireless Earbuds" },
+			{ src: "/images/wireless-earbuds.jpg", alt: "Wireless Earbuds" },
+			{ src: "/images/wireless-earbuds.jpg", alt: "Wireless Earbuds" },
+		],
+	},
 ];
 
 export default function Marketplace() {
@@ -107,7 +195,6 @@ function SidebarComponent({
 			setPriceRange([value[0], value[1]]);
 		}
 	};
-
 	return (
 		<Sidebar>
 			<SidebarHeader className="p-6 border-b">
@@ -123,6 +210,9 @@ function SidebarComponent({
 							step={10}
 							value={priceRange}
 							onValueChange={handleSliderChange}
+							onValueChange={(value) =>
+								setPriceRange(value as [number, number])
+							}
 							className="mb-3"
 						/>
 						<div className="flex justify-between text-lg">
@@ -165,12 +255,14 @@ function HeaderComponent({ searchTerm, setSearchTerm }: HeaderComponentProps) {
 				</Button>
 			</SidebarTrigger>
 			<div className="flex items-center text-2xl space-x-3">
+			<div className="flex items-center text-2xl space-x-3 w-full md:w-auto">
 				<Input
 					type="search"
 					placeholder="Search products..."
 					value={searchTerm}
 					onChange={(e) => setSearchTerm(e.target.value)}
 					className="w-[16rem] h-[3rem]"
+					className="w-full h-[3rem] md:w-[16rem]"
 				/>
 				<Button size="icon" variant="ghost">
 					<Search className="h-5 w-5" />
@@ -190,6 +282,12 @@ function ProductList({ products }: ProductListProps) {
 					<Card key={product.id} className="p-6">
 						<CardHeader>
 							<CardTitle className="text-xl font-semibold">
+			<div className="flex flex-wrap justify-center gap-8">
+				{products?.map((product) => (
+					<Card key={product.id}>
+						<CardHeader>
+							<ImageCarousel images={product.images} />
+							<CardTitle className="text-xl font-medium">
 								{product.name}
 							</CardTitle>
 						</CardHeader>
@@ -199,6 +297,17 @@ function ProductList({ products }: ProductListProps) {
 						<CardFooter className="flex justify-between items-center">
 							<span className="text-2xl font-bold">${product.price}</span>
 							<Button className="text-[16px] py-2 px-4">Add to Cart</Button>
+						<CardFooter className="flex justify-between gap-2 items-center flex-wrap">
+							<span className="text-3xl font-bold">${product.price}</span>
+							<div className="flex flex-col m-auto">
+								<Button className="mb-4">
+									<ShoppingCart className="mr-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+									Add to Cart
+								</Button>
+								<Button className="text-[16px] !bg-[#F5F5F5] !text-black border border-[#D1D1D1] px-4 py-2 flex items-center gap-2 hover:bg-[#E0E0E0] hover:border-[#B3B3B3]">
+									<MessageSquareMore /> Chat with Seller
+								</Button>
+							</div>
 						</CardFooter>
 					</Card>
 				))}

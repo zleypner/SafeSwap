@@ -13,7 +13,7 @@ Welcome to the **Web Marketplace with Escrow Contracts**, a decentralized platfo
 
 ## 🛠️ Technology Stack
 
-- **Frontend**: HTML, CSS, JavaScriptm TypeScript
+- **Frontend**: HTML, CSS, JavaScript, TypeScript
 - **Backend**: TBD
 - **Blockchain**: Stellar Network for handling decentralized, escrow-based transactions
 - **API**: Trustless Work API for managing the creation of the Smart Contracts

@@ -22,14 +22,10 @@ export function HeroSection() {
 				</div>
 
 				<h1 className="text-4xl sm:text-6xl font-bold tracking-tight mb-8 bg-clip-text from-primary to-primary/70">
-					SafeSwap
-				</h1>
-				<h3 className="text-2xl sm:text-3xl font-semibold tracking-tight mb-6 bg-clip-text from-primary to-primary/70">
-					The Future of Secure Trading
-				</h3>
 					The Future of
 					<span className="block mt-2">Secure Trading</span>
 				</h1>
+
 				<p className="text-xl text-muted-foreground max-w-[600px] mb-12">
 					Experience trustless trading with built-in Stellar escrow protection.
 					Your gateway to secure, decentralized commerce.

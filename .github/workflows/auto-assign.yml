@@ -12,7 +12,6 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const { github, context } = require('@actions/github');
             const reviewers = ['danielcdz'];
             const assignees = [context.actor];
 
@@ -23,7 +22,7 @@ jobs:
               pull_number: context.payload.pull_request.number,
               reviewers,
             });
-            
+
             // Add assignees
             await github.rest.issues.addAssignees({
               owner: context.repo.owner,

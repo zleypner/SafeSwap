@@ -7,13 +7,20 @@ import { useEffect, useState } from "react";
 import { IoMoon, IoSunny } from "react-icons/io5";
 
 export default function Home() {
-	const [dark, setDark] = useState(() => {
-		return JSON.parse(localStorage.getItem("darkMode") || "false");
-	});
+	const [dark, setDark] = useState(false);
 
 	useEffect(() => {
-		document.documentElement.classList.toggle("dark", dark);
-		localStorage.setItem("darkMode", JSON.stringify(dark));
+		const darkMode = localStorage.getItem("darkMode");
+		if (darkMode) {
+			setDark(JSON.parse(darkMode));
+		}
+	}, []);
+
+	useEffect(() => {
+		if (typeof window !== "undefined") {
+			document.documentElement.classList.toggle("dark", dark);
+			localStorage.setItem("darkMode", JSON.stringify(dark));
+		}
 	}, [dark]);
 
 	return (

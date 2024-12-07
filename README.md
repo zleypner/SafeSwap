@@ -111,6 +111,3 @@ We welcome contributions! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for 
 - [danielcdz](https://github.com/danielcdz)
 - Contributions from the open-source community and OnlyDust
 
-## 📞 Contact
-
-- 

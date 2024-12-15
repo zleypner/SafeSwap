@@ -22,6 +22,7 @@ import { Eye, MessageSquareMore, ShoppingCart } from "lucide-react";
 import { type Dispatch, type SetStateAction, useState } from "react";
 import ImageCarousel from "../components/ui/image-carrousel";
 import ProductUploadModal from "../components/ui/product-upload-modal";
+import { ProductsPagination } from "../components/marketplace";
 
 interface Product {
 	id: number;
@@ -165,7 +166,7 @@ export default function Marketplace() {
 
 	return (
 		<SidebarProvider>
-			<div className="flex h-screen overflow-hidden">
+			<div className="flex min-h-screen">
 				<SidebarComponent
 					priceRange={priceRange}
 					setPriceRange={setPriceRange}
@@ -256,7 +257,7 @@ function ProductList({
 	onViewDetails,
 }: ProductListProps & { onViewDetails: (product: Product) => void }) {
 	return (
-		<main className="p-8">
+		<main className="p-8 h-screen">
 			<h1 className="text-3xl font-bold mb-8">Products</h1>
 			<div className="flex flex-wrap justify-center gap-8">
 				{products?.map((product) => (
@@ -294,6 +295,7 @@ function ProductList({
 						</CardFooter>
 					</Card>
 				))}
+				<ProductsPagination />
 			</div>
 		</main>
 	);

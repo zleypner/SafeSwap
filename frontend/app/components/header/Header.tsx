@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import { IoMoon, IoSunny } from "react-icons/io5";
 import SubHeader from "./subheader/SubHeader";
+import { Select } from "@radix-ui/react-select";
 
 export default function Header() {
   const [searchTerm, setSearchTerm] = useState<string>("");
@@ -71,6 +72,10 @@ export default function Header() {
           </div>
         ) : null}
         <div className="flex gap-4">
+        <Button size="lg" className="group">
+            <div className="mr-2 h-4 w-4 transition-transform group-hover:scale-110" />
+            Delivery 
+          </Button>
           <Button size="lg" className="group">
             <Wallet className="mr-2 h-4 w-4 transition-transform group-hover:scale-110" />
             Connect Wallet

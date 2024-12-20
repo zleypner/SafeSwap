@@ -13,6 +13,7 @@ import {
 } from "@/app/components/ui/dropdown-menu";
 
 import DeliveryLocationButton from "@/app/components/ui/delivery-location-button";
+import { MapPin } from 'lucide-react';
 
 import {
   Search,
@@ -81,7 +82,8 @@ export default function Header() {
         <div className="flex gap-4">
           <Button size="lg" className="group">            
           <DeliveryLocationButton />
-            Country
+          <MapPin />
+              Country          
           </Button>
           <Button size="lg" className="group">
             <Wallet className="mr-2 h-4 w-4 transition-transform group-hover:scale-110" />

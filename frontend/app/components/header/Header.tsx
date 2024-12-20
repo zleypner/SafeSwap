@@ -22,10 +22,10 @@ import {
   Settings,
   List,
   History,
+  MapPin,
 } from "lucide-react";
 import { IoMoon, IoSunny } from "react-icons/io5";
 import SubHeader from "./subheader/SubHeader";
-
 
 export default function Header() {
   const [searchTerm, setSearchTerm] = useState<string>("");
@@ -75,12 +75,11 @@ export default function Header() {
               </Button>
             </div>
           ) : null}
-          
-          
         </div>
         <div className="flex gap-4">
           <Button size="lg" className="group">            
-          <DeliveryLocationButton />
+            <DeliveryLocationButton />
+            <MapPin className="mr-2 h-4 w-4 transition-transform group-hover:scale-110" />
             Country
           </Button>
           <Button size="lg" className="group">

@@ -8,6 +8,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/app/components/ui/select"
+import { CR } from 'country-flag-icons/react/3x2'
 
 export function DeliveryLocationButton() {
   return (
@@ -18,8 +19,8 @@ export function DeliveryLocationButton() {
       <SelectContent>
         <SelectGroup>
           <SelectLabel>Countries</SelectLabel>
-          <SelectItem value="cr">Costa Rica 🇨🇷</SelectItem>
         </SelectGroup>
+          <SelectItem value="cr">Costa Rica</SelectItem>
       </SelectContent>
     </Select>
   )

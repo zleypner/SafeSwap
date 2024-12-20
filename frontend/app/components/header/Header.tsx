@@ -12,7 +12,7 @@ import {
   DropdownMenuTrigger,
 } from "@/app/components/ui/dropdown-menu";
 
-import  DeliveryButton  from "@/components/ui/delivery-button";
+import DeliveryLocationButton from "@/app/components/ui/delivery-location-button";
 
 import {
   Search,
@@ -80,7 +80,7 @@ export default function Header() {
         </div>
         <div className="flex gap-4">
           <Button size="lg" className="group">            
-          <DeliveryButton />
+          <DeliveryLocationButton />
             Country
           </Button>
           <Button size="lg" className="group">

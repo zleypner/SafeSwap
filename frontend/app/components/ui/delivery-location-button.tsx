@@ -7,9 +7,9 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@/app/components/ui/select"
 
-export function DeliveryButton() {
+export function DeliveryLocationButton() {
   return (
     <Select>
       <SelectTrigger className="w-[180px]">
@@ -25,4 +25,4 @@ export function DeliveryButton() {
   )
 }
 
-export default DeliveryButton
+export default DeliveryLocationButton

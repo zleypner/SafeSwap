@@ -20,7 +20,14 @@ export function DeliveryLocationButton() {
         <SelectGroup>
           <SelectLabel>Countries</SelectLabel>
         </SelectGroup>
-          <SelectItem value="cr">Costa Rica</SelectItem>
+        <SelectItem value="cr" className="flex items-center justify-between">
+            Costa Rica         
+            <img 
+              src="/images/costarica.svg" 
+              alt="Costa Rica flag"
+              className="inline-block w-6 h-6 ml-2" 
+            />
+          </SelectItem>
       </SelectContent>
     </Select>
   )

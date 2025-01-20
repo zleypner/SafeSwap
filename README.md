@@ -150,4 +150,5 @@ We welcome contributions! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for 
 ## 🧑‍💻 Authors
 
 - [danielcdz](https://github.com/danielcdz)
+- [derianrddev](https://github.com/derianrddev)
 - Contributions from the open-source community and OnlyDust

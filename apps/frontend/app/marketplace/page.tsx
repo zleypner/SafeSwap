@@ -4,6 +4,7 @@ import { CirclePlus, MessageSquareMore, ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import AddProductModal from "@/app/components/marketplace/add-product-modal";
 import BreadcrumbNavigation from "@/app/components/shared/breadcrumb-navigation";
@@ -21,39 +22,44 @@ import { products } from "@/constants/testDataProduct";
 import ProductsNotFound from "../components/marketplace/products-not-found";
 
 export default function ProductList() {
-  const [showModal, setShowModal] = useState(false);
-  const [priceRange, setPriceRange] = useState<[number, number]>([0, 1500]);
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+	const router = useRouter();
+	const [showModal, setShowModal] = useState(false);
+	const [priceRange, setPriceRange] = useState<[number, number]>([0, 1500]);
+	const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
-  const filteredProducts = products.filter(
-    (product) =>
-      product.price >= priceRange[0] &&
-      product.price <= priceRange[1] &&
-      (selectedCategories.length === 0 ||
-        selectedCategories.includes(product.category))
-  );
+	const handleAddProduct = () => {
+		router.push("/marketplace/create-product");
+	};
 
-  return (
-    <main className="container p-6 mx-auto">
-      <section className="flex items-end justify-between">
-        <BreadcrumbNavigation />
-        <div className="flex justify-end">
-          <Button onClick={() => setShowModal(true)}>
-            <CirclePlus className="mr-2 h-4 w-4" />
-            Add Product
-          </Button>
-        </div>
-      </section>
-      <section className="flex flex-col md:flex-row gap-6 mt-6">
-        {/* Filters */}
-        <aside className="w-full md:w-1/4">
-          <Filters
-            priceRange={priceRange}
-            setPriceRange={setPriceRange}
-            selectedCategories={selectedCategories}
-            setSelectedCategories={setSelectedCategories}
-          />
-        </aside>
+	const filteredProducts = products.filter(
+		(product) =>
+			product.price >= priceRange[0] &&
+			product.price <= priceRange[1] &&
+			(selectedCategories.length === 0 ||
+				selectedCategories.includes(product.category)),
+	);
+
+	return (
+		<main className="container p-6 mx-auto">
+			<section className="flex items-end justify-between">
+				<BreadcrumbNavigation />
+				<div className="flex justify-end">
+					<Button onClick={handleAddProduct}>
+						<CirclePlus className="mr-2 h-4 w-4" />
+						Add Product
+					</Button>
+				</div>
+			</section>
+			<section className="flex flex-col md:flex-row gap-6 mt-6">
+				{/* Filters */}
+				<aside className="w-full md:w-1/4">
+					<Filters
+						priceRange={priceRange}
+						setPriceRange={setPriceRange}
+						selectedCategories={selectedCategories}
+						setSelectedCategories={setSelectedCategories}
+					/>
+				</aside>
 
         {/* Product List */}
 

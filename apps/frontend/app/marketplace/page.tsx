@@ -19,6 +19,7 @@ import {
   CardTitle,
 } from "@/app/components/ui/card";
 import { products } from "@/constants/testDataProduct";
+import { generateProductSlug } from "@/utils/generateProductSlug";
 import ProductsNotFound from "../components/marketplace/products-not-found";
 
 export default function ProductList() {
@@ -77,7 +78,7 @@ export default function ProductList() {
               >
                 <CardHeader>
                   <div className="aspect-square">
-                    <Link href={`/marketplace/${product.id}`}>
+				  <Link href={`/marketplace/${generateProductSlug(product.name)}`}>
                       <Image
                         src={product.images[0].src}
                         alt={product.images[0].alt}

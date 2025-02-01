@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 
 import "./globals.css";
 import { ThemeProvider } from "./components/providers/theme-provider";
+import { LanguageProvider } from "./context/language-context";
 
 const satoshi = localFont({
 	src: "./fonts/Satoshi.woff2",
@@ -29,7 +30,7 @@ export default function RootLayout({
 					enableSystem
 					disableTransitionOnChange
 				>
-					{children}
+					<LanguageProvider>{children}</LanguageProvider>
 				</ThemeProvider>
 			</body>
 		</html>

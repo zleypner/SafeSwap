@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "@/app/hooks/useTranslations";
 import Image from "next/image";
 import { Button } from "../../ui/button";
 import {
@@ -38,8 +39,10 @@ export function ConnectWalletModal({
 	isOpen,
 	onOpenChange,
 }: ConnectWalletModalProps) {
+	const { t } = useTranslations();
+
 	const handleWalletConnect = (wallet: WalletOption) => {
-		console.log(`Connecting to ${wallet.name}...`);
+		console.log(`${t("common.wallet.connect")} ${wallet.name}...`);
 		onOpenChange(false);
 	};
 
@@ -47,9 +50,11 @@ export function ConnectWalletModal({
 		<Dialog open={isOpen} onOpenChange={onOpenChange}>
 			<DialogContent className="sm:max-w-md">
 				<DialogHeader>
-					<DialogTitle className="font-bold">Connect Your Wallet</DialogTitle>
+					<DialogTitle className="font-bold">
+						{t("common.wallet.title")}
+					</DialogTitle>
 					<DialogDescription>
-						Choose a wallet to enable secure transactions on SafeSwap.
+						{t("common.wallet.description")}
 					</DialogDescription>
 				</DialogHeader>
 				<div className="flex flex-col gap-3 py-4">

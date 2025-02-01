@@ -1,7 +1,8 @@
 "use client";
 
-import { Bell, ShoppingCart, Wallet } from "lucide-react";
 import { Button } from "@/app/components/ui/button";
+import { useTranslations } from "@/app/hooks/useTranslations";
+import { Bell, ShoppingCart, Wallet } from "lucide-react";
 import { useState } from "react";
 import {
 	Tooltip,
@@ -14,6 +15,7 @@ import { ShoppingCartModal } from "./shopping-cart-modal";
 import { UserMenu } from "./user-menu";
 
 export const ActionButtons = () => {
+	const { t } = useTranslations();
 	const [isWalletModalOpen, setIsWalletModalOpen] = useState(false);
 	const [isCartModalOpen, setIsCartModalOpen] = useState(false);
 
@@ -29,22 +31,22 @@ export const ActionButtons = () => {
 								onClick={() => setIsWalletModalOpen(true)}
 							>
 								<Wallet className="!h-6 !w-6 transition-transform group-hover:scale-110" />
-								<span className="sr-only">Connect Wallet</span>
+								<span className="sr-only">{t("common.connectWallet")}</span>
 							</Button>
 						</TooltipTrigger>
 						<TooltipContent>
-							<p>Connect Wallet</p>
+							<p>{t("common.connectWallet")}</p>
 						</TooltipContent>
 					</Tooltip>
 					<Tooltip>
 						<TooltipTrigger asChild>
 							<Button variant="ghost" size="icon">
 								<Bell className="!h-6 !w-6 transition-transform group-hover:scale-110" />
-								<span className="sr-only">Notifications</span>
+								<span className="sr-only">{t("common.notifications")}</span>
 							</Button>
 						</TooltipTrigger>
 						<TooltipContent>
-							<p>Notifications</p>
+							<p>{t("common.notifications")}</p>
 						</TooltipContent>
 					</Tooltip>
 					<Tooltip>
@@ -55,11 +57,11 @@ export const ActionButtons = () => {
 								onClick={() => setIsCartModalOpen(true)}
 							>
 								<ShoppingCart className="!h-6 !w-6 transition-transform group-hover:scale-110" />
-								<span className="sr-only">Shopping Cart</span>
+								<span className="sr-only">{t("common.shoppingCart")}</span>
 							</Button>
 						</TooltipTrigger>
 						<TooltipContent>
-							<p>Shopping Cart</p>
+							<p>{t("common.shoppingCart")}</p>
 						</TooltipContent>
 					</Tooltip>
 					<UserMenu />

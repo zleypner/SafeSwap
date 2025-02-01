@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "@/app/hooks/useTranslations";
 import { CirclePlus, MessageSquareMore, ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -22,7 +23,27 @@ import { products } from "@/constants/testDataProduct";
 import { generateProductSlug } from "@/utils/generateProductSlug";
 import ProductsNotFound from "../components/marketplace/products-not-found";
 
+const getProductKey = (id: number) => {
+	switch (id) {
+		case 1:
+			return "macbook";
+		case 2:
+			return "galaxy";
+		case 3:
+			return "chair";
+		case 4:
+			return "coffee";
+		case 5:
+			return "shoes";
+		case 6:
+			return "earbuds";
+		default:
+			return "";
+	}
+};
+
 export default function ProductList() {
+	const { t } = useTranslations();
 	const router = useRouter();
 	const [showModal, setShowModal] = useState(false);
 	const [priceRange, setPriceRange] = useState<[number, number]>([0, 1500]);
@@ -47,7 +68,7 @@ export default function ProductList() {
 				<div className="flex justify-end">
 					<Button onClick={handleAddProduct}>
 						<CirclePlus className="mr-2 h-4 w-4" />
-						Add Product
+						{t("common.productList.addProduct")}
 					</Button>
 				</div>
 			</section>
@@ -63,7 +84,6 @@ export default function ProductList() {
 				</aside>
 
 				{/* Product List */}
-
 				<section className="flex flex-col flex-1">
 					{filteredProducts.length <= 0 ? (
 						<ProductsNotFound
@@ -80,7 +100,13 @@ export default function ProductList() {
 									<CardHeader>
 										<div className="aspect-square">
 											<Link
-												href={`/marketplace/${generateProductSlug(product.name)}`}
+												href={`/marketplace/${generateProductSlug(
+													t(
+														`common.products.items.${getProductKey(
+															product.id,
+														)}.name`,
+													),
+												)}`}
 											>
 												<Image
 													src={product.images[0].src}
@@ -93,25 +119,34 @@ export default function ProductList() {
 											</Link>
 										</div>
 										<p className="text-medium text-gray-500 px-4 pt-4">
-											{product.category}
+											{t(
+												`common.products.categories.${product.category.toLowerCase()}`,
+											)}
 										</p>
 										<Link href={`/marketplace/${product.id}`}>
 											<CardTitle className="text-xl font-medium cursor-pointer hover:underline pt-0">
-												{product.name}
+												{t(
+													`common.products.items.${getProductKey(
+														product.id,
+													)}.name`,
+												)}
 											</CardTitle>
 										</Link>
 									</CardHeader>
 									<CardContent className="pt-4">
-										<span className="text-3xl font-bold">${product.price}</span>
+										<span className="text-3xl font-bold">
+											{t("common.productList.currency")}
+											{product.price}
+										</span>
 									</CardContent>
 									<CardFooter className="flex flex-col gap-3">
 										<Button className="w-full">
 											<ShoppingCart className="mr-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-											Add to Cart
+											{t("common.productList.addToCart")}
 										</Button>
 										<Button variant="secondary" className="w-full">
 											<MessageSquareMore className="mr-2 h-4 w-4" />
-											Chat with Seller
+											{t("common.productList.chatWithSeller")}
 										</Button>
 									</CardFooter>
 								</Card>

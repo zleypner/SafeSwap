@@ -5,8 +5,10 @@ import { useState } from "react";
 
 import { Button } from "@/app/components/ui/button";
 import { Input } from "@/app/components/ui/input";
+import { useTranslations } from "@/app/hooks/useTranslations";
 
 export const SearchBar = () => {
+	const { t } = useTranslations();
 	const [searchTerm, setSearchTerm] = useState<string>("");
 	const showSearchBar = searchTerm !== undefined && setSearchTerm !== undefined;
 
@@ -27,7 +29,7 @@ export const SearchBar = () => {
 						className="absolute right-0 top-0 h-full"
 					>
 						<Search className="!h-5 !w-5" />
-						<span className="sr-only">Search</span>
+						<span className="sr-only">{t("common.search")}</span>
 					</Button>
 				</div>
 			) : null}

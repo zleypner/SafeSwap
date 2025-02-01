@@ -1,5 +1,7 @@
+"use client";
+
 import Image from "next/image";
-import { useState } from "react";
+import { useLanguage } from "../../../context/language-context";
 import {
 	Select,
 	SelectContent,
@@ -9,10 +11,10 @@ import {
 } from "../../ui/select";
 
 export const LanguageSelector = () => {
-	const [selectedLanguage, setSelectedLanguage] = useState("en");
+	const { locale, setLocale } = useLanguage();
 
 	return (
-		<Select value={selectedLanguage} onValueChange={setSelectedLanguage}>
+		<Select value={locale} onValueChange={setLocale}>
 			<SelectTrigger className="w-[85px] h-9 pr-0 flex items-center gap-1 text-sm border-none shadow-none focus:ring-0">
 				<SelectValue placeholder="Language" />
 			</SelectTrigger>

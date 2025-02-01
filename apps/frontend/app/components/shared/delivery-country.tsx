@@ -10,12 +10,14 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/app/components/ui/select";
+import { useTranslations } from "@/app/hooks/useTranslations";
 
 export function DeliveryCountry() {
+	const { t } = useTranslations();
 	return (
 		<div className="flex items-center">
 			<MapPin />
-			<p className="ml-2">Ship to</p>
+			<p className="ml-2">{t("common.shipTo")}</p>
 			<Select defaultValue="CRC">
 				<SelectTrigger className="w-[85px] border-none shadow-none px-1 focus:ring-0 text-base">
 					<SelectValue placeholder="Select a country" />

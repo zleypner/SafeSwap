@@ -1,4 +1,34 @@
+"use client";
+
+import { useTranslations } from "@/app/hooks/useTranslations";
+
 export function StatsSection() {
+	const { t } = useTranslations();
+
+	const stats = [
+		{
+			key: "totalVolume",
+			label: t("common.stats.totalVolume.label"),
+			value: t("common.stats.totalVolume.value"),
+			subtext: t("common.stats.totalVolume.subtext"),
+			change: t("common.stats.totalVolume.change"),
+		},
+		{
+			key: "activeTraders",
+			label: t("common.stats.activeTraders.label"),
+			value: t("common.stats.activeTraders.value"),
+			subtext: t("common.stats.activeTraders.subtext"),
+			change: t("common.stats.activeTraders.change"),
+		},
+		{
+			key: "successfulTrades",
+			label: t("common.stats.successfulTrades.label"),
+			value: t("common.stats.successfulTrades.value"),
+			subtext: t("common.stats.successfulTrades.subtext"),
+			change: t("common.stats.successfulTrades.change"),
+		},
+	];
+
 	return (
 		<div className="relative py-20 overflow-hidden">
 			{/* Decorative elements */}
@@ -6,27 +36,8 @@ export function StatsSection() {
 
 			<div className="relative max-w-6xl mx-auto px-4">
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-					{[
-						{
-							label: "Total Volume",
-							value: "$10M+",
-							subtext: "Across all markets",
-							change: "+25% this month",
-						},
-						{
-							label: "Active Traders",
-							value: "50K+",
-							subtext: "Verified users",
-							change: "+12% this week",
-						},
-						{
-							label: "Successful Trades",
-							value: "100K+",
-							subtext: "With 0 disputes",
-							change: "99.9% success rate",
-						},
-					].map((stat) => (
-						<div key={stat.label} className="relative group">
+					{stats.map((stat) => (
+						<div key={stat.key} className="relative group">
 							<div className="p-8 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/10 hover:border-primary/20 transition-all duration-300">
 								<div className="text-4xl font-bold mb-2 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
 									{stat.value}

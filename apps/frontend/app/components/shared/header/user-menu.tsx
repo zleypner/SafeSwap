@@ -1,5 +1,3 @@
-"use client";
-
 import {
 	Globe,
 	List,
@@ -11,6 +9,7 @@ import {
 } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { useTranslations } from "../../../hooks/useTranslations";
 
 import { Button } from "@/app/components/ui/button";
 import {
@@ -25,6 +24,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "../../ui/tooltip";
 import { LanguageSelector } from "./language-selector";
 
 export const UserMenu = () => {
+	const { t } = useTranslations();
 	const { theme, setTheme } = useTheme();
 	const [mounted, setMounted] = useState(false);
 	const [isOpen, setIsOpen] = useState(false);
@@ -42,33 +42,30 @@ export const UserMenu = () => {
 							</Button>
 						</DropdownMenuTrigger>
 						<DropdownMenuContent className="w-56" align="end" forceMount>
-							{/* Profile Options */}
 							<DropdownMenuItem>
 								<UserCircle className="mr-2 h-4 w-4" />
-								<span>Profile</span>
+								<span>{t("common.profile")}</span>
 							</DropdownMenuItem>
 							<DropdownMenuItem>
 								<List className="mr-2 h-4 w-4" />
-								<span>My Products</span>
+								<span>{t("common.myProducts")}</span>
 							</DropdownMenuItem>
 							<DropdownMenuItem>
 								<Receipt className="mr-2 h-4 w-4" />
-								<span>Transactions</span>
+								<span>{t("common.transactions")}</span>
 							</DropdownMenuItem>
 							<DropdownMenuItem>
 								<Settings className="mr-2 h-4 w-4" />
-								<span>Settings</span>
+								<span>{t("common.settings")}</span>
 							</DropdownMenuItem>
 
-							{/* Divider Line */}
 							<DropdownMenuSeparator />
 
-							{/* Dark Mode Toggle */}
 							<DropdownMenuItem onSelect={(event) => event.preventDefault()}>
 								<div className="flex items-center justify-between w-full">
 									<div className="flex items-center gap-2">
 										<Moon className="mr-2 h-4 w-4" />
-										<span>Dark mode</span>
+										<span>{t("common.darkMode")}</span>
 									</div>
 									<Switch
 										checked={mounted && theme === "dark"}
@@ -79,12 +76,11 @@ export const UserMenu = () => {
 								</div>
 							</DropdownMenuItem>
 
-							{/* Language Selector */}
 							<DropdownMenuItem>
 								<div className="flex items-center justify-between w-full">
 									<div className="flex items-center gap-2">
 										<Globe className="mr-2 h-4 w-4" />
-										<span>Language</span>
+										<span>{t("common.language")}</span>
 									</div>
 									<LanguageSelector />
 								</div>
@@ -95,7 +91,7 @@ export const UserMenu = () => {
 			</TooltipTrigger>
 			{!isOpen && (
 				<TooltipContent>
-					<p>User Menu</p>
+					<p>{t("common.userMenu")}</p>
 				</TooltipContent>
 			)}
 		</Tooltip>

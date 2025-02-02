@@ -1,7 +1,9 @@
 "use client";
 
-import { useCreateProductHook } from "@/app/components/marketplace/hooks/useCreateProduct.hook";
-import { Button } from "@/app/components/ui/button";
+import { ChevronsUpDown, X } from "lucide-react";
+import Image from "next/image";
+
+import { Button } from "@/components/ui/button";
 import {
 	Command,
 	CommandEmpty,
@@ -9,24 +11,23 @@ import {
 	CommandInput,
 	CommandItem,
 	CommandList,
-} from "@/app/components/ui/command";
+} from "@/components/ui/command";
 import {
 	Form,
 	FormControl,
 	FormField,
 	FormItem,
 	FormMessage,
-} from "@/app/components/ui/form";
-import { Input } from "@/app/components/ui/input";
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 import {
 	Popover,
 	PopoverContent,
 	PopoverTrigger,
-} from "@/app/components/ui/popover";
-import { Textarea } from "@/app/components/ui/textarea";
-import { useTranslations } from "@/app/hooks/useTranslations";
-import { ChevronsUpDown, X } from "lucide-react";
-import Image from "next/image";
+} from "@/components/ui/popover";
+import { Textarea } from "@/components/ui/textarea";
+import { useCreateProductHook } from "@/hooks/useCreateProduct";
+import { useTranslations } from "@/hooks/useTranslations";
 
 const CreateProduct = () => {
 	const {

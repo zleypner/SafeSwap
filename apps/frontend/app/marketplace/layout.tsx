@@ -1,14 +1,18 @@
-import Footer from "../components/shared/footer";
-import Header from "../components/shared/header/header";
+import BreadcrumbNavigation from "@/components/shared/breadcrumb-navigation";
+import Footer from "@/components/shared/footer";
+import Header from "@/components/shared/header/header";
 
 export default function MarketplaceLayout({
 	children,
 }: { children: React.ReactNode }) {
 	return (
-		<>
+		<div className="flex flex-col min-h-screen">
 			<Header />
-			<div className="min-h-[calc(100vh-160px)]">{children}</div>
+			<div className="container mx-auto py-4">
+				<BreadcrumbNavigation />
+			</div>
+			<main className="flex-grow container pb-10 mx-auto">{children}</main>
 			<Footer />
-		</>
+		</div>
 	);
 }

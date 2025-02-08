@@ -22,9 +22,9 @@ POSTGRES_PORT=5433
 
 | Variable          | Description       | Current Value |
 | ----------------- | ----------------- | ------------- |
-| POSTGRES_DB       | Database name     | testdb        |
-| POSTGRES_USER     | Database user     | testuser      |
-| POSTGRES_PASSWORD | Database password | test@16790    |
+| POSTGRES_DB       | Database name     | safeswap      |
+| POSTGRES_USER     | Database user     | root          |
+| POSTGRES_PASSWORD | Database password | 12345678      |
 | POSTGRES_PORT     | Database port     | 5433          |
 
 ## Getting Started
@@ -54,7 +54,7 @@ POSTGRES_PORT=5433
 
 ## Data Persistence
 
-The database data is persisted through a Docker volume named `postgres_data`. This ensures your data survives container restarts and removals.
+The database data is persisted through a Docker volume named `safeswap_data`. This ensures your data survives container restarts and removals.
 
 ## Stopping the Database
 

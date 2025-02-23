@@ -239,7 +239,24 @@ export const es = {
 		addToCart: "Añadir al Carrito",
 		chatWithSeller: "Chatear con Vendedor",
 	},
-
+	howSafeSwapWorks: {
+		title: "Cómo funciona SafeSwap",
+		step1: {
+			title: "Explorar y seleccionar productos",
+			description:
+				"Explore nuestra amplia gama de productos y elija lo que le guste.",
+		},
+		step2: {
+			title: "Pago seguro con depósito en garantía",
+			description:
+				"Pague de forma segura utilizando nuestro sistema de depósito en garantía basado en Blockchain.",
+		},
+		step3: {
+			title: "Reciba su producto de manera segura",
+			description:
+				"Reciba su producto y libere el pago cuando esté satisfecho.",
+		},
+	},
 	sellerOnboarding: {
 		title: "Comienza a Vender en SafeSwap",
 		description:

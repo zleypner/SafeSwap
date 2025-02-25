@@ -348,7 +348,9 @@ export const en = {
 		pending: "Pending",
 		forReview: "For Review",
 	},
-
+	testimonials: {
+		title: "What Our Users Say",
+	},
 	filters: {
 		title: " Filter",
 		header: "Filters",

@@ -388,5 +388,8 @@ export const es = {
 			fair: "Aceptable",
 		},
 	},
+	testimonials: {
+		title: "Lo Que Dicen Nuestros Usuarios",
+	},
 	// Add more sections as needed
 };

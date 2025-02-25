@@ -6,6 +6,7 @@ import { HeroSection } from "@/components/home/hero-section";
 import { HowSafeSwapWorks } from "@/components/home/how-safeswap-works";
 import { SellerSection } from "@/components/home/seller-section";
 import { StatsSection } from "@/components/home/stats-section";
+import TestimonialsCarousel from "@/components/testimonials/testimonials-carousel";
 
 export default function Home() {
 	return (
@@ -16,6 +17,7 @@ export default function Home() {
 			<AdvantagesSection />
 			<HowSafeSwapWorks />
 			<SellerSection />
+			<TestimonialsCarousel />
 		</main>
 	);
 }

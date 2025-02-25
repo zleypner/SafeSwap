@@ -239,6 +239,7 @@ export const en = {
 		addToCart: "Add to Cart",
 		chatWithSeller: "Chat with Seller",
 	},
+	
 	ExploreCategories: {
 		title: "Explore Categories",
 		verTodas: "View All",
@@ -388,5 +389,18 @@ export const en = {
 			fair: "Fair",
 		},
 	},
+  shopping: {
+		pay: "Pay",
+		openDispute: "Open Dispute",
+		markAsReceived: "Mark as Received",
+		send: "Send",
+		typeMessageHero: "Type your message here",
+		escrowStatus: {
+			pending: "Pending",
+			onDispute: "On Dispute",
+			forReview: "For Review",
+			approved: "Approved",
+    },
+  },
 	// Add more sections as needed
 };

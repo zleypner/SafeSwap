@@ -240,6 +240,7 @@ export const es = {
 		addToCart: "Añadir al Carrito",
 		chatWithSeller: "Chatear con Vendedor",
 	},
+
 	ExploreCategories: {
 		title: "Explorar Categorias",
 		verTodas: "Ver todas",
@@ -390,6 +391,20 @@ export const es = {
 	},
 	testimonials: {
 		title: "Lo Que Dicen Nuestros Usuarios",
+	},
+
+  shopping: {
+		pay: "Pagar",
+		openDispute: "Abrir Disputa",
+		markAsReceived: "Marcar como Recibido",
+		send: "Enviar",
+		typeMessageHero: "Escribe tu mensaje aquí",
+		escrowStatus: {
+			pending: "Pendiente",
+			onDispute: "En Disputa",
+			forReview: "Para Revisión",
+			approved: "Aprobado",
+		},
 	},
 	// Add more sections as needed
 };

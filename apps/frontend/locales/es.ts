@@ -240,7 +240,10 @@ export const es = {
 		addToCart: "Añadir al Carrito",
 		chatWithSeller: "Chatear con Vendedor",
 	},
-
+	ExploreCategories: {
+		title: "Explorar Categorias",
+		verTodas: "Ver todas",
+	},
 	advantagesOfSafeSwap: {
 		title: "Impulsado por Stellar y Trustless Work",
 		subtitle:
@@ -269,7 +272,6 @@ export const es = {
 			},
 		},
 	},
-
 	howSafeSwapWorks: {
 		title: "Cómo funciona SafeSwap",
 		step1: {

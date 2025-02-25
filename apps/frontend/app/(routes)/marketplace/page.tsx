@@ -1,10 +1,6 @@
 "use client";
 
-import { MessageSquareMore, ShoppingBag, ShoppingCart } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useState } from "react";
-
+import ExploreCategories from "@/components/home/explore-categories";
 import FilterModal from "@/components/marketplace/filter-modal";
 import ProductsNotFound from "@/components/marketplace/products-not-found";
 import { ProductsPagination } from "@/components/marketplace/products-pagination";
@@ -17,9 +13,14 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 import { useTranslations } from "@/hooks/useTranslations";
+import { CATEGORIES } from "@/lib/constants/categories";
 import { products } from "@/lib/mocks/products";
 import { FilterState } from "@/lib/types/filters";
 import { generateProductSlug } from "@/utils/generateProductSlug";
+import { MessageSquareMore, ShoppingBag, ShoppingCart } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const initialFilters: FilterState = {
 	categories: [],
@@ -152,6 +153,9 @@ export default function ProductList() {
 				)}
 				<ProductsPagination />
 			</section>
+
+			{/* Explore Categories */}
+			<ExploreCategories categories={CATEGORIES} />
 		</>
 	);
 }

@@ -239,7 +239,10 @@ export const en = {
 		addToCart: "Add to Cart",
 		chatWithSeller: "Chat with Seller",
 	},
-
+	ExploreCategories: {
+		title: "Explore Categories",
+		verTodas: "View All",
+	},
 	advantagesOfSafeSwap: {
 		title: "Powered by Stellar and Trustless Work",
 		subtitle:
@@ -268,7 +271,6 @@ export const en = {
 			},
 		},
 	},
-
 	howSafeSwapWorks: {
 		title: "How SafeSwap Works",
 		step1: {

@@ -252,7 +252,7 @@ export const en = {
 		addToCart: "Add to Cart",
 		chatWithSeller: "Chat with Seller",
 	},
-	
+
 	ExploreCategories: {
 		title: "Explore Categories",
 		verTodas: "View All",
@@ -362,6 +362,87 @@ export const en = {
 		pending: "Pending",
 		forReview: "For Review",
 	},
+
+	Sales: {
+		title: "My Sales",
+		searchPlaceholder: "Search sales...",
+		filters: {
+			all: "All",
+			pending: "Pending",
+			onDispute: "On Dispute",
+			forReview: "For Review",
+			approved: "Approved",
+		},
+		table: {
+			shoppingDate: "Shopping Date",
+			productName: "Product Name",
+			shoppingId: "Shopping ID",
+			price: "Price",
+			buyer: "Buyer",
+			escrowStatus: "Escrow Status",
+		},
+		status: {
+			approved: "Approved",
+			pending: "Pending",
+			onDispute: "On Dispute",
+			forReview: "For Review",
+		},
+		milestones: {
+			title: "Milestones",
+			date: "Date",
+			name: "Name",
+			status: "Status",
+			actions: "Actions",
+			complete: "Complete",
+			orderPlaced: "Order Placed",
+			paymentConfirmed: "Payment Confirmed",
+			productShipped: "Product Shipped",
+			deliveryExpected: "Delivery Expected",
+		},
+		total: "Total Shopping",
+		Sales: {
+			title: "My Sales",
+			searchPlaceholder: "Search sales...",
+			filters: {
+				all: "All",
+				pending: "Pending",
+				onDispute: "On Dispute",
+				forReview: "For Review",
+				approved: "Approved",
+			},
+			table: {
+				shoppingDate: "Shopping Date",
+				productName: "Product Name",
+				shoppingId: "Shopping ID",
+				price: "Price",
+				buyer: "Buyer",
+				escrowStatus: "Escrow Status",
+			},
+			status: {
+				approved: "Approved",
+				pending: "Pending",
+				onDispute: "On Dispute",
+				forReview: "For Review",
+			},
+			milestones: {
+				title: "Milestones",
+				date: "Date",
+				name: "Name",
+				status: "Status",
+				actions: "Actions",
+				complete: "Complete",
+
+				items: {
+					orderPlaced: "Order Placed",
+					paymentConfirmed: "Payment Confirmed",
+					productShipped: "Product Shipped",
+					deliveryExpected: "Delivery Expected",
+				},
+			},
+			total: "Total Shopping",
+		},
+	},
+
 	testimonials: {
 		title: "What Our Users Say",
 	},
@@ -402,7 +483,7 @@ export const en = {
 			fair: "Fair",
 		},
 	},
-  shopping: {
+	shopping: {
 		pay: "Pay",
 		openDispute: "Open Dispute",
 		markAsReceived: "Mark as Received",
@@ -413,7 +494,8 @@ export const en = {
 			onDispute: "On Dispute",
 			forReview: "For Review",
 			approved: "Approved",
-    },
-  },
+		},
+	},
+
 	// Add more sections as needed
 };

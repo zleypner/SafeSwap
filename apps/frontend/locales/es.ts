@@ -365,6 +365,47 @@ export const es = {
 		forReview: "Para Revisión",
 	},
 
+
+	Sales: {
+		title: "Mis Ventas",
+		searchPlaceholder: "Buscar ventas...",
+		filters: {
+			all: "Todas",
+			pending: "Pendientes",
+			onDispute: "En Disputa",
+			forReview: "En Revisión",
+			approved: "Aprobadas",
+		},
+		table: {
+			shoppingDate: "Fecha de Compra",
+			productName: "Nombre del Producto",
+			shoppingId: "ID de Compra",
+			price: "Precio",
+			buyer: "Comprador",
+			escrowStatus: "Estado de Custodia",
+		},
+		status: {
+			approved: "Aprobado",
+			pending: "Pendiente",
+			onDispute: "En Disputa",
+			forReview: "En Revisión",
+		},
+		milestones: {
+			title: "Hitos",
+			date: "Fecha",
+			name: "Nombre",
+			status: "Estado",
+			actions: "Acciones",
+			complete: "Completar",
+			orderPlaced: "Pedido realizado",
+			paymentConfirmed: "Pago confirmado",
+			productShipped: "Producto enviado",
+			deliveryExpected: "Entrega esperada",
+		},
+		total: "Total de Compras",
+	},
+
+
 	filters: {
 		title: " Filtros",
 		header: "Filtros",
@@ -419,5 +460,6 @@ export const es = {
 			approved: "Aprobado",
 		},
 	},
+
 	// Add more sections as needed
 };

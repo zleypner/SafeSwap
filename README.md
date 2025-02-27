@@ -1,3 +1,5 @@
+
+![SAFESWAP LOGO_ON RICH BLACK](https://github.com/user-attachments/assets/8260378d-07dd-4309-b7e0-da42247fa21c)
 # SafeSwap
 # Web Marketplace with Escrow Contracts on Stellar
 
@@ -13,11 +15,11 @@ Welcome to the **Web Marketplace with Escrow Contracts**, a decentralized platfo
 
 ## 🛠️ Technology Stack
 
-- **Frontend**: HTML, CSS, JavaScript, TypeScript
-- **Backend**: TBD
+- **Frontend**: Next.js, Tailwind CSS, shadcn/ui
+- **Backend**: NestJS, GraphQL (Apollo Server), Prisma
 - **Blockchain**: Stellar Network for handling decentralized, escrow-based transactions
 - **API**: Trustless Work API for managing the creation of the Smart Contracts
-- **Database**: TBD
+- **Database**: PostgreSQL
 
 ## 🔑 Key Components
 
@@ -35,49 +37,101 @@ Welcome to the **Web Marketplace with Escrow Contracts**, a decentralized platfo
 ## 📄 Usage
 
 ### Prerequisites
-- TBD
+
+- **Node.js** version 20 or higher
+    - Refer to the [Node.js official documentation](https://nodejs.org/) to download and install the latest version.
+    - To check your installed Node.js version:
+        
+        ```bash
+        node -v
+        ```
+        
+- **npm** version 10.9.2 or higher
+    - Refer to the [npm official documentation](https://docs.npmjs.com/) for detailed instructions.
+    - To check your installed npm version:
+        
+        ```bash
+        npm -v
+        ```
+    - To globally install or update npm to version 10.9.2:
+        
+        ```bash
+        npm install -g npm@10.9.2
+        ```
+
+        After updating, recheck the version using npm -v.
 
 ### Installation
 
 1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/your-username/SafeSwap.git
-   cd SafeSwap
-   ```
-
+    
+    ```bash
+    git clone https://github.com/your-username/SafeSwap.git
+    cd SafeSwap
+    ```
+    
 2. **Install Dependencies**:
-   ```bash
-   npm install
-   ```
+    - Install the global dependencies for the monorepo and its workspaces:
+    
+    ```bash
+    npm install
+    ```
+    
+    This will install all the necessary dependencies for the applications within the `apps/*` subdirectories.
 
-Available Commands:
-- `npm run web:dev` - Start development server
-- `npm run web:build` - Create production build
-- `npm run web:start` - Start production server
-- `npm run web:lint` - Run Biome linter
+---
 
-### Frontend
+### Available Commands
 
-1. Navigate to the frontend directory:
-   ```bash
-   cd frontend
-   ```
+- `npm run dev` - Starts the development server of all applications.
+- `npm run build` - Builds the production version of all applications.
+- `npm run lint` - Runs the linter configured of all applications.
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+---
 
-3. Run development server:
-   ```bash
-   npm run dev
-   ```
+### Managing Dependencies and Running Specific Applications
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+### Adding Dependencies
+
+If you need to add a dependency to any of the applications within the monorepo, you must navigate to the respective application directory and then install the dependency from there.
+    
+### Running Specific Applications
+
+Run individual applications directly from the root directory:
+
+1. **Frontend**:
+    
+    ```bash
+    npm run dev:frontend
+    ```
+    
+2. **backend**:
+    
+    ```bash
+    npm run dev:backend
+    ```
+    
+---
+
+### Applications in the Monorepo
+
+The monorepo contains the following applications:
+
+1. **Frontend (Next.js)**
+    - Description: The frontend application built with Next.js, providing the user interface for the project.
+    - Path: apps/frontend
+2. **Backend (Nest.js)**
+    - Description: The backend application built with Nest.js, handling business logic and APIs to interact with the frontend and other services.
+    - Path: apps/backend
+
+---
 
 ## 📚 Documentation
 
-For detailed frontend documentation, see the [README.md](frontend/README.md) file.
+For more details on each of the applications, please refer to the respective README files:
+
+- [Frontend Documentation](apps/frontend/README.md)
+- [Backend Documentation](apps/backend/README.md)
 
 ### How It Works
 
@@ -85,17 +139,53 @@ For detailed frontend documentation, see the [README.md](frontend/README.md) fil
 2. **Making a Purchase**: Buyers can select a product and initiate a purchase. Funds are transferred to an escrow account on the Stellar blockchain.
 3. **Escrow Release**: Upon completion of the agreed-upon conditions, the Trustless Work API triggers the release of funds to the seller’s Stellar account.
 
-## 📜 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 🤝 Contributing
 
-We welcome contributions! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to contribute to this project.
-
+We appreciate and welcome contributions! To get started, please review our [CONTRIBUTING GUIDELINES](docs/guidelines/CONTRIBUTION_GUIDELINES.md) and [GIT GUIDELINES](docs/guidelines/GIT_GUIDELINES.md) for detailed instructions on how to contribute effectively.
 
 ## 🧑‍💻 Authors
 
-- [danielcdz](https://github.com/danielcdz)
-- Contributions from the open-source community and OnlyDust
+<table align="center">
+  <tr>
+    <td align="center" valign="top" width="25%">
+      <img src="https://avatars.githubusercontent.com/u/66186331?v=4" alt="Daniel Calderón Díaz" width="120" />
+      <br />
+      <strong>Daniel Calderón Díaz</strong>
+      <br />
+      <a href="https://github.com/danielcdz" target="_blank">
+        GitHub
+      </a>
+    </td>
+    <td align="center" valign="top" width="25%">
+      <img src="https://avatars.githubusercontent.com/u/59376626?v=4" alt="Derian Rodríguez Durán" width="120" />
+      <br />
+      <strong>Derian Rodríguez Durán</strong>
+      <br />
+      <a href="https://github.com/derianrddev" target="_blank">
+        GitHub
+      </a>
+    </td>
+    <td align="center" valign="top" width="25%">
+      <img src="https://avatars.githubusercontent.com/u/85724318?v=4" alt="Diego Duarte Fernández" width="120" />
+      <br />
+      <strong>Diego Duarte Fernández</strong>
+      <br />
+      <a href="https://github.com/diegoTech14" target="_blank">
+        GitHub
+      </a>
+    </td>
+    <td align="center" valign="top" width="25%">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVtyx7mtfp-kgZAnvXHmmTIPR-sRVJP1NHwA&s" alt="OnlyDust" width="120" />
+      <br />
+      <strong>Open Source Contributors</strong>
+      <br />
+      <a href="https://www.onlydust.com/" target="_blank">
+        OnlyDust
+      </a>
+    </td>
+  </tr>
+</table>
 
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

@@ -365,6 +365,56 @@ export const es = {
 		forReview: "Para Revisión",
 	},
 
+	shopping: {
+		title: "Mis Compras",
+		tabs: {
+			all: "Todos",
+			pending: "Pendiente",
+			ondispute: "En Disputa",
+			forreview: "En Revisión",
+			approved: "Aprobado",
+		},
+		table: {
+			date: "Fecha de Compra",
+			product: "Nombre del Producto",
+			id: "ID de Compra",
+			price: "Precio",
+			seller: "Vendedor",
+			status: "Estado de Custodia",
+			actions: "Acciones",
+		},
+		orderDetails: {
+			title: "Detalles del Pedido",
+			productLabel: "Producto",
+			idLabel: "ID de Compra",
+			dateLabel: "Fecha",
+			priceLabel: "Precio",
+			sellerLabel: "Vendedor",
+			statusLabel: "Estado",
+		},
+
+		search: "Buscar productos...",
+		total: "Total de Compras",
+		buttons: {
+			startDispute: "Iniciar disputa",
+			approve: "Aprobar",
+			viewDetails: "Ver Detalles",
+		},
+		currency: "$",
+      	pay: "Pagar",
+		openDispute: "Abrir Disputa",
+		markAsReceived: "Marcar como Recibido",
+		send: "Enviar",
+		typeMessageHero: "Escribe tu mensaje aquí",
+		escrowStatus: {
+			pending: "Pendiente",
+			onDispute: "En Disputa",
+			forReview: "Para Revisión",
+			approved: "Aprobado",
+		},
+	},
+
+
 
 	Sales: {
 		title: "Mis Ventas",
@@ -447,19 +497,6 @@ export const es = {
 		title: "Lo Que Dicen Nuestros Usuarios",
 	},
 
-  shopping: {
-		pay: "Pagar",
-		openDispute: "Abrir Disputa",
-		markAsReceived: "Marcar como Recibido",
-		send: "Enviar",
-		typeMessageHero: "Escribe tu mensaje aquí",
-		escrowStatus: {
-			pending: "Pendiente",
-			onDispute: "En Disputa",
-			forReview: "Para Revisión",
-			approved: "Aprobado",
-		},
-	},
 
 	// Add more sections as needed
 };

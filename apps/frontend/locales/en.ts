@@ -363,6 +363,55 @@ export const en = {
 		forReview: "For Review",
 	},
 
+
+	shopping: {
+		title: "My Shopping",
+		tabs: {
+			all: "All",
+			pending: "Pending",
+			ondispute: "On Dispute",
+			forreview: "For Review",
+			approved: "Approved",
+		},
+		table: {
+			date: "Shopping Date",
+			product: "Product Name",
+			id: "Shopping ID",
+			price: "Price",
+			seller: "Seller",
+			status: "Escrow Status",
+			actions: "Actions",
+		},
+		orderDetails: {
+			title: "Order Details",
+			productLabel: "Product",
+			idLabel: "Shopping ID",
+			dateLabel: "Date",
+			priceLabel: "Price",
+			sellerLabel: "Seller",
+			statusLabel: "Status",
+		},
+		search: "Search products...",
+		total: "Total Shopping",
+		buttons: {
+			startDispute: "Start dispute",
+			approve: "Approve",
+			viewDetails: "View Details",
+		},
+		currency: "$",
+      pay: "Pay",
+		openDispute: "Open Dispute",
+		markAsReceived: "Mark as Received",
+		send: "Send",
+		typeMessageHero: "Type your message here",
+		escrowStatus: {
+			pending: "Pending",
+			onDispute: "On Dispute",
+			forReview: "For Review",
+			approved: "Approved",
+     },
+   },
+
 	Sales: {
 		title: "My Sales",
 		searchPlaceholder: "Search sales...",
@@ -481,19 +530,6 @@ export const en = {
 			likeNew: "like New",
 			good: "Good",
 			fair: "Fair",
-		},
-	},
-	shopping: {
-		pay: "Pay",
-		openDispute: "Open Dispute",
-		markAsReceived: "Mark as Received",
-		send: "Send",
-		typeMessageHero: "Type your message here",
-		escrowStatus: {
-			pending: "Pending",
-			onDispute: "On Dispute",
-			forReview: "For Review",
-			approved: "Approved",
 		},
 	},
 

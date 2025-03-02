@@ -14,6 +14,10 @@ import {
 import { Input } from "@/components/ui/input";
 import { useTranslations } from "@/hooks/useTranslations";
 import { products } from "@/lib/mocks/products";
+import {
+	fundReservationEscrow,
+	initializedReservationEscrow,
+} from "@/services/tw.service";
 import { getProductKey } from "@/utils/getProductKey";
 import {
 	AlertTriangle,
@@ -82,6 +86,19 @@ export default function ShoppingDetailsPage({
 		return <NotFound />;
 	}
 
+	const onPay = async () => {
+		const { data } = await initializedReservationEscrow({
+			id: product.id,
+			productName: product.name,
+			description: product.description,
+			price: product.price,
+		});
+
+		const contractId = data.contract_id;
+
+		await fundReservationEscrow({ contractId, amount: product.price });
+	};
+
 	return (
 		<section className="py-4 space-y-10">
 			<h1 className="capitalize text-3xl font-bold">shopping details</h1>
@@ -123,7 +140,7 @@ export default function ShoppingDetailsPage({
 							{t("shopping.escrowStatus.pending")}
 						</Badge>
 						<div className="flex flex-col md:block gap-2 mx-auto md:m-0">
-							<Button className="md:mr-2">
+							<Button className="md:mr-2" onClick={onPay}>
 								<ShoppingBag className="mr-2 h-4 w-4" />
 								{t("shopping.pay")}
 							</Button>

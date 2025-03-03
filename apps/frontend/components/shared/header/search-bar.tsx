@@ -32,13 +32,26 @@ export const SearchBar = () => {
 		setSearchTerm("");
 	};
 
+	// When search is expanded, add a class to the body to prevent scrolling
+	useEffect(() => {
+		if (isSearchExpanded) {
+			document.body.style.overflow = "hidden";
+		} else {
+			document.body.style.overflow = "";
+		}
+
+		return () => {
+			document.body.style.overflow = "";
+		};
+	}, [isSearchExpanded]);
+
 	// Collapsed search button
 	if (!isSearchExpanded) {
 		return (
 			<Button
 				variant="ghost"
 				size="icon"
-				className="flex items-center justify-center -mr-4"
+				className="flex items-center justify-center -mr-1"
 				onClick={() => setIsSearchExpanded(true)}
 				aria-label={t("common.search")}
 			>
@@ -50,8 +63,8 @@ export const SearchBar = () => {
 
 	// Expanded search input
 	return (
-		<div className="fixed inset-0 flex items-start justify-center pt-4 px-4 bg-black/20 z-50 sm:absolute sm:inset-auto sm:left-1/2 sm:top-4 sm:-translate-x-1/2">
-			<div className="w-full max-w-md sm:max-w-[500px] relative flex items-center bg-background border rounded-md shadow-lg">
+		<div className="fixed inset-0 flex items-start justify-center pt-16 px-4 bg-black/40 z-50">
+			<div className="w-full max-w-md relative flex items-center bg-background border rounded-md shadow-lg">
 				<Search className="absolute left-3 h-4 w-4 text-muted-foreground" />
 				<Input
 					type="search"

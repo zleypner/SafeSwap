@@ -38,11 +38,11 @@ export const SearchBar = () => {
 			<Button
 				variant="ghost"
 				size="icon"
-				className="h-9 w-9"
+				className="flex items-center justify-center -mr-4"
 				onClick={() => setIsSearchExpanded(true)}
 				aria-label={t("common.search")}
 			>
-				<Search className="h-5 w-5" />
+				<Search className="!h-6 !w-6 transition-transform group-hover:scale-110" />
 				<span className="sr-only">{t("common.search")}</span>
 			</Button>
 		);
@@ -50,8 +50,8 @@ export const SearchBar = () => {
 
 	// Expanded search input
 	return (
-		<div className="absolute left-1/2 top-4 -translate-x-1/2 z-50 w-[500px] max-w-[calc(100vw-32px)]">
-			<div className="relative flex items-center w-full bg-background border rounded-md shadow-lg">
+		<div className="fixed inset-0 flex items-start justify-center pt-4 px-4 bg-black/20 z-50 sm:absolute sm:inset-auto sm:left-1/2 sm:top-4 sm:-translate-x-1/2">
+			<div className="w-full max-w-md sm:max-w-[500px] relative flex items-center bg-background border rounded-md shadow-lg">
 				<Search className="absolute left-3 h-4 w-4 text-muted-foreground" />
 				<Input
 					type="search"
